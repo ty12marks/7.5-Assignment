@@ -15,9 +15,9 @@ title: 11ty Boilerplate
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@2"></script>
   <!-- Include Alpine Fetch -->
   <script src="https://cdn.jsdelivr.net/npm/alpine-fetch@1"></script>
-  
+
   <!-- Include your custom JavaScript file -->
-  <script src="/path/to/main.js"></script>
+  <script src="/path/to/main.js" defer></script>
 
   <!-- Include your custom CSS file if needed -->
   <link rel="stylesheet" href="/path/to/styles.css">
@@ -27,9 +27,12 @@ title: 11ty Boilerplate
   <h1>Welcome to My 11ty Site!</h1>
   <p>This is a simple demonstration of using Alpine.js and Alpine Fetch with 11ty.</p>
 
-  <div x-data="{ message: 'Hello, world!' }">
-    <p x-text="message"></p>
-    <button @click="message = 'Alpine.js is awesome!'">Change Message</button>
+  <div x-data="example">
+    <h2>Send Messages:</h2>
+    <button @click="sendMessages">Send Messages</button>
+
+    <!-- Display your total status -->
+    <p>Total Messages Sent: {{ totalStatus.sent }}</p>
   </div>
 
   <!-- Your additional content goes here -->
