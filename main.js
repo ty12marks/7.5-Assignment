@@ -3,12 +3,12 @@
 document.addEventListener('alpine:init', () => {
   Alpine.data('example', () => ({
     // Placeholder data or initialization, modify as needed
-    ids: [/* your array of ids */],
+    ids: [1, 2, 3], // Replace with your array of ids
     isTemplate: true, // Modify based on your logic
-    template: /* your message template */,
-    clients: [/* your array of clients */],
-    statuses: [/* your array of statuses */],
-    deviceCount: /* your device count */,
+    template: 'Hello, { "name": "{{ firstName }}" }!', // Replace with your message template
+    clients: ['ClientA', 'ClientB', 'ClientC'], // Replace with your array of clients
+    statuses: ['Sent', 'Failed', 'Delivered'], // Replace with your array of statuses
+    deviceCount: 3, // Replace with your device count
     totalStatus: {
       sent: 0,
       addSent(count) {
@@ -36,6 +36,7 @@ document.addEventListener('alpine:init', () => {
     sendD2CMessageCore(client, message, status, totalStatus) {
       // Implement your logic to send a message to the client
       // Update status and total status accordingly
+      console.log(`Message sent to ${client}: ${message} (${status})`);
     },
   }));
 });
