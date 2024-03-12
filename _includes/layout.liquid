@@ -1,22 +1,26 @@
----
-title: 11ty Boilerplate
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Common head content for all pages -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/styles/screen.css">
+
+  <!-- Include Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2"></script>
+  <!-- Include Alpine Fetch -->
+  <script src="https://cdn.jsdelivr.net/npm/alpine-fetch@1"></script>
+  
+  <!-- Include your custom JavaScript file -->
+  <script src="/path/to/main.js"></script>
+
+  <!-- Include your custom CSS file if needed -->
+  <link rel="stylesheet" href="/path/to/styles.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="/" title="Go home">Home</a></li>
-      <li><a href="/about/" title="About the boilerplate">About</a></li>
-    </ul>
-  </nav>
-    {{ content }}
+
+  <!-- Content from each individual page will be injected here -->
+  {{ content | safe }}
+
 </body>
 </html>
